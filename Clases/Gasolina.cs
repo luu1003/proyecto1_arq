@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace b_taller_automovil.Clases
+{
+    public class Gasolina : Carro
+    {
+        private byte numero_cilindro;
+
+        public Gasolina(string placa, string marca, string modelo, int año, Cliente dueño, byte numero_cilindro)
+            : base(placa, marca, modelo, año, dueño)
+        {
+            this.Numero_cilindro = numero_cilindro;
+        }
+
+        public Gasolina(string placa, string marca, string modelo, int año, Cliente dueño)
+            : base(placa, marca, modelo, año, dueño)
+        {
+        }
+
+        public byte Numero_cilindro { get => numero_cilindro; set => numero_cilindro = value; }
+
+        public override string reparacion_puesta_punto()
+        {
+            return $"Se cambiaron las correas, las bujías, se drena el radiador y se le ajustan los inyectores. ";
+        }
+    }
+}
